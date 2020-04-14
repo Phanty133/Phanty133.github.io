@@ -43,7 +43,7 @@ export default class SpriteLoader{
 				}
 			}
 
-			req.open("GET", `/svg/${sprite}.svg`);
+			req.open("GET", `svg/${sprite}.svg`);
 			req.send();
 		});
 	}
