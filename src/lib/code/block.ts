@@ -35,11 +35,11 @@ export default class Block{
 			// Update wires
 
 			for(let input of this.inputs){
-				input.wire.updateLine();
+				if(input.wire !== null) input.wire.updateLine();
 			}
 
 			for(let output of this.outputs){
-				output.wire.updateLine();
+				if(output.wire !== null) output.wire.updateLine();
 			}
 		});
 	}

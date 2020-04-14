@@ -52,11 +52,12 @@ export default class Game{
 				this.activeWireGhost.svg.remove();
 				this.activeWireGhost.c0.parent.resetDraggable();
 				
-				// @ts-ignore
-				const connectionInstance: svg.G = getFirstElementWithProperty(document.elementFromPoint(event.x, event.y), "blockConnection", "blockConnection").instance;
-				const targetConnection: Connection = connectionInstance.remember("connection");
+				const connectionEl: HTMLElement = getFirstElementWithProperty(document.elementFromPoint(event.x, event.y), "blockConnection", "blockConnection");
 
-				if(targetConnection !== undefined){
+				if(connectionEl !== null){
+					// @ts-ignore
+					const targetConnection: Connection = connectionEl.instance.remember("connection");
+
 					if(targetConnection.type !== this.activeWireGhost.c0.type && targetConnection.parent !== this.activeWireGhost.c0.parent){
 						let wireOutput: Connection;
 						let wireInput: Connection;

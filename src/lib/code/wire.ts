@@ -1,6 +1,7 @@
 import Connection from "./connection";
 import * as svg from "@svgdotjs/svg.js";
 import { getSVGPos } from "../util/svgUtil";
+import { getFirstElementWithProperty } from "../util/domUtil";
 
 export default class Wire{
 	input: Connection;
@@ -19,7 +20,7 @@ export default class Wire{
 
 		this.svgG.on("mousedown", (event: MouseEvent)=>{ // Check if click was meant for connection
 			// @ts-ignore
-			const elBeneath:svg.G = document.elementsFromPoint(event.x, event.y)[1].instance.parent();
+			const elBeneath:svg.G = getFirstElementWithProperty(document.elementsFromPoint(event.x, event.y)[1], "blockConnection", "blockConnection").instance; //document.elementsFromPoint(event.x, event.y)[1].instance.parent();
 			const connection: Connection = elBeneath.remember("connection");
 
 			if(connection !== undefined){
