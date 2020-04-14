@@ -1,0 +1,57 @@
+body{
+	font-family: "Arial";
+}
+
+.counterContainer{
+	text-align: center;
+	font-size: 2.5vh;
+	width: 100%;
+	margin-top: 5vh;
+}
+
+#mainCounter{
+	font-weight: bold;
+	font-size: 4em;
+}
+
+.codingAreaContainer{
+	width: 95vw;
+	height: 72vh;
+	margin-left: 1.75vw;
+	margin-top: 2vh;
+}
+
+#codingArea{
+	border: 1px solid black;
+	width: 100%;
+	height: 100%;
+}
+
+.cycleInput{
+	fill: #CCC;
+}
+
+.cycleOutput{
+	fill: #777;
+}
+
+.defaultBlock{
+	fill: #00AAFF
+}
+
+.defaultConnection[type="0"]{ /* input */
+	fill: #00DD33;
+}
+
+.defaultConnection[type="1"]{ /* output */
+	fill: #DD3300;
+}
+
+.useable{
+	transition: filter 0.5s;
+	cursor: pointer;
+}
+
+.defaultWire{
+	fill: #FF7700;
+}
